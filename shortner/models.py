@@ -2,7 +2,7 @@ from django.db import models
 from .utils import code_generator, create_shortcut
 from django.conf import settings
 from shortner.validators import validate_url
-from django.urls import reverse
+
 
 # Create your models here.
 

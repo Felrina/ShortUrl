@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from shortner.models import UrlModels
 from shortner.forms import UrlForms
 from django.contrib import messages
-from django.http import HttpResponse, HttpResponseRedirect    
+from django.http import HttpResponse, HttpResponseRedirect, Http404    
 import random, string
 from django.views import View
 
