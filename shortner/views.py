@@ -26,13 +26,15 @@ class BaseView(View):
             obj, created = UrlModels.objects.get_or_create(url=new_url)
             context = {
                 "object": obj,
-                "created": created,
             }
             template = "shortner/success.html"
             if created:
                 context['title'] = 'CREATED SHORT URL'
+                context['created'] = created
+                messages.info(request, 'CREATED A NEW SHORT URL')
             else:
                 context['title'] = 'SHORT URL EXISTS'
+                messages.info(request, 'SHORT URL PRESENT')
         return render(request, template ,context)
 
         
